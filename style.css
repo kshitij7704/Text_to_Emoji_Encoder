@@ -1,0 +1,322 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #ffffff;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #1a1a2e;
+    font-family: Arial, sans-serif;
+}
+
+#main {
+    height: 100%;
+    width: 100%;
+    background-color: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 10px;
+}
+
+#main > h1 {
+    font-size: 48px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+#arrowSpan {
+    display: flex;
+    align-items: center;
+}
+
+#main > h1 span {
+    margin: 0 15px;
+}
+
+#main > h1 span img {
+    transition: 0.3s ease;
+}
+
+#main > #endec-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #16213e;
+    padding: 8px;
+    width: 90%;
+    max-width: 500px;
+    margin: 35px 0;
+    border-radius: 10px;
+}
+
+#main > #endec-div h3 {
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 12px 12px;
+    transform: 0.2s ease;
+    flex: 1;
+    justify-content: center;
+}
+
+#enc-btn {
+    background-color: #0f3460;
+}
+
+#dec-btn {
+    background-color: #16213e;
+}
+
+#endec-div h3 span {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+#endec-div h3 span img {
+    height: 22px;
+}
+
+#encryption {
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+#encryption h5 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 13px;
+    color: #ffffff;
+}
+
+#encryption textarea {
+    width: 100%;
+    height: 70px;
+    border: 1px solid #343a40;
+    margin-bottom: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 17px;
+    outline: none;
+    background-color: #212121;
+}
+
+#encryption input {
+    width: 100%;
+    border: 1px solid #343a40;
+    padding: 10px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    font-size: 17px;
+    outline: none;
+    background-color: #212121;
+}
+
+#encryption button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6e6e6e;
+    background-color: #0f3460;
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    color: #eee;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+#encryption button:hover {
+    background-color: #e94560;
+}
+
+button span {
+    display: flex;
+    margin-right: 10px;
+}
+
+button img {
+    height: 20px;
+}
+
+#decryption {
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    display: none;
+}
+
+#decryption h5 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 13px;
+    color: #ffffff;
+}
+
+#decryption textarea {
+    width: 100%;
+    height: 70px;
+    border: 1px solid #343a40;
+    margin-bottom: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 17px;
+    outline: none;
+    background-color: #212121;
+}
+
+#decryption input {
+    width: 100%;
+    border: 1px solid #343a40;
+    padding: 10px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    font-size: 17px;
+    outline: none;
+    background-color: #212121;
+}
+
+#decryption button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6e6e6e;
+    background-color: #0f3460;
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    color: #eee;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+#decryption button:hover {
+    background-color: #e94560;
+}
+
+button span {
+    display: flex;
+    margin-right: 10px;
+}
+
+button img {
+    height: 20px;
+}
+
+#result {
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    background-color: #16213e;
+    border-radius: 10px;
+    border: none;
+    display: none;
+    resize: none;
+    padding: 5px;
+}
+
+#res {
+    padding: 5px;
+}
+
+#wrongResult {
+    width: 90%;
+    max-width: 500px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    background-color: #16213e;
+    border-radius: 10px;
+    border: none;
+    display: none;
+    resize: none;
+    color: #e94560;
+}
+
+#copyButton {
+    color: #ffffff;
+    background-color: #e94560;
+    height: 30px;
+    width: 50px;
+    border-radius: 5px;
+    border: none;
+}
+
+.copyButton {
+    margin-top: 20px;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #main > h1 {
+        font-size: 36px;
+    }
+
+    #main > #endec-div {
+        width: 70%;
+    }
+
+    #dec-btn {
+        width: 100%;
+    }
+
+    #enc-btn {
+        width: 100%;
+    }
+
+    #encryption, #decryption, #result, #wrongResult {
+        width: 80%;
+    }
+
+    #encryption textarea, #decryption textarea {
+        height: 50px;
+    }
+
+    #encryption button, #decryption button {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #main > h1 {
+        font-size: 28px;
+        flex-direction: column;
+    }
+
+    #main > #endec-div {
+        flex-direction: column;
+    }
+
+    #encryption h5, #decryption h5 {
+        font-size: 14px;
+    }
+
+    #encryption textarea, #decryption textarea {
+        height: 40px;
+    }
+
+    #encryption button, #decryption button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

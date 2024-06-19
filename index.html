@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Emoji Encryptor/Decryptor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <h1>Encoded<span id="arrowSpan"> <img id="arrowIcon" src="./assets/arrow.png" alt="Arrow img"></span>Decoded</h1>
+
+        <div id="endec-div">
+            <h3 id="enc-btn"> <span><img src="./assets/lock.png" alt="Lock img"></span> Encode Text </h3>
+            <h3 id="dec-btn"> <span><img src="./assets/unlock.png" alt="Unlock img"></span> Decode Text </h3>
+        </div>
+        
+        <div id="encryption">
+            <h5>1. Type a message</h5>
+            <textarea placeholder="Write your text here to encode" id="txtmsg" cols="30" rows="10"></textarea>
+            <h5>2. Set a password</h5>
+            <input type="password" id="password">
+            <button id="encrypt-btn"><span><img src="./assets/lock.png" alt="Lock img"></span>Encode Text</button>
+            <div class="copyButton">
+                <button id="copyButton">Copy</button>
+            </div>
+        </div>
+
+
+        <div id="decryption">
+            <h5>1. Paste encoded emojis</h5>
+            <textarea placeholder="Paste your encoded emojis here" id="emojimsg" cols="30" rows="10"></textarea>
+            <h5>2. Type the password</h5>
+            <input type="password" id="finalpassword">
+            <button id="decrypt-btn"><span><img src="./assets/unlock.png" alt="Unlock img"></span>Decode Emojis</button>
+        </div>
+        
+        <div id="res"></div>
+
+        <textarea readonly id="result" cols="30" rows="10"></textarea>
+
+        <textarea readonly id="wrongResult" cols="30" rows="10"></textarea>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
