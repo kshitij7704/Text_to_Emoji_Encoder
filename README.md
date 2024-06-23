@@ -20,3 +20,19 @@ This project allows users to encode their secret messages into emojis and later 
 1. <b>index.html</b>: The main HTML file containing the structure of the application.
 2. <b>style.css</b>: The CSS file for styling the application.
 3. <b>script.js</b>: The JavaScript file containing the logic for encoding, decoding, and copying the message.
+
+## Setup Instructions
+To run the Text to Emoji Encoder/Decryptor locally, follow these steps:
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/Text_to_Emoji_Encoder.git
+```
+2. Navigate to the project directory:
+```bash
+cd Text_to_Emoji_Encoder
+```
+3. Open the index.html file in your preferred web browser:
+```bash
+open index.html
+```
+Alternatively, you can use a live server extension in your code editor for a better development experience.
