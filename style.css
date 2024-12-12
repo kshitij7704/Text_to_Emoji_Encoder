@@ -1,3 +1,4 @@
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -10,8 +11,12 @@ html, body {
     width: 100%;
     background-color: #1a1a2e;
     font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Main Container */
 #main {
     height: 100%;
     width: 100%;
@@ -44,7 +49,8 @@ html, body {
     transition: 0.3s ease;
 }
 
-#main > #endec-div {
+/* Encode/Decode Section */
+#endec-div {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -56,7 +62,7 @@ html, body {
     border-radius: 10px;
 }
 
-#main > #endec-div h3 {
+#endec-div h3 {
     font-size: 17px;
     display: flex;
     align-items: center;
@@ -64,9 +70,9 @@ html, body {
     font-weight: 500;
     cursor: pointer;
     padding: 12px 12px;
-    transform: 0.2s ease;
     flex: 1;
     justify-content: center;
+    transition: 0.2s ease;
 }
 
 #enc-btn {
@@ -87,7 +93,8 @@ html, body {
     height: 22px;
 }
 
-#encryption {
+/* Encryption and Decryption Section */
+#encryption, #decryption {
     width: 90%;
     max-width: 500px;
     display: flex;
@@ -95,18 +102,16 @@ html, body {
     flex-direction: column;
 }
 
-#encryption h5 {
+#encryption h5, #decryption h5 {
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 13px;
-    color: #ffffff;
 }
 
-#encryption textarea {
+textarea, input {
     width: 100%;
-    height: 70px;
     border: 1px solid #343a40;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     padding: 10px;
     border-radius: 10px;
     font-size: 17px;
@@ -114,18 +119,11 @@ html, body {
     background-color: #212121;
 }
 
-#encryption input {
-    width: 100%;
-    border: 1px solid #343a40;
-    padding: 10px;
-    margin-bottom: 50px;
-    border-radius: 10px;
-    font-size: 17px;
-    outline: none;
-    background-color: #212121;
+textarea {
+    height: 90px;
 }
 
-#encryption button {
+button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,7 +138,7 @@ html, body {
     cursor: pointer;
 }
 
-#encryption button:hover {
+button:hover {
     background-color: #e94560;
 }
 
@@ -151,115 +149,6 @@ button span {
 
 button img {
     height: 20px;
-}
-
-#decryption {
-    width: 90%;
-    max-width: 500px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    display: none;
-}
-
-#decryption h5 {
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 13px;
-    color: #ffffff;
-}
-
-#decryption textarea {
-    width: 100%;
-    height: 70px;
-    border: 1px solid #343a40;
-    margin-bottom: 50px;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 17px;
-    outline: none;
-    background-color: #212121;
-}
-
-#decryption input {
-    width: 100%;
-    border: 1px solid #343a40;
-    padding: 10px;
-    margin-bottom: 50px;
-    border-radius: 10px;
-    font-size: 17px;
-    outline: none;
-    background-color: #212121;
-}
-
-#decryption button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #6e6e6e;
-    background-color: #0f3460;
-    border: none;
-    width: 100%;
-    border-radius: 10px;
-    padding: 10px;
-    color: #eee;
-    font-size: 17px;
-    cursor: pointer;
-}
-
-#decryption button:hover {
-    background-color: #e94560;
-}
-
-button span {
-    display: flex;
-    margin-right: 10px;
-}
-
-button img {
-    height: 20px;
-}
-
-#result {
-    width: 90%;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-    background-color: #16213e;
-    border-radius: 10px;
-    border: none;
-    display: none;
-    resize: none;
-    padding: 5px;
-}
-
-#res {
-    padding: 5px;
-}
-
-#wrongResult {
-    width: 90%;
-    max-width: 500px;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-    background-color: #16213e;
-    border-radius: 10px;
-    border: none;
-    display: none;
-    resize: none;
-    color: #e94560;
-}
-
-#copyButton {
-    color: #ffffff;
-    background-color: #e94560;
-    height: 30px;
-    width: 50px;
-    border-radius: 5px;
-    border: none;
 }
 
 .copyButton {
@@ -267,20 +156,41 @@ button img {
     display: none;
 }
 
+#result, #wrongResult {
+    width: 90%;
+    max-width: 500px;
+    margin-top: 30px;
+    border-radius: 10px;
+    border: none;
+    display: none;
+    resize: none;
+    padding: 15px;
+}
+
+#res {
+    display: none;
+}
+
+#result {
+    background-color: #16213e;
+}
+
+#wrongResult {
+    background-color: #16213e;
+    color: #e94560;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
     #main > h1 {
         font-size: 36px;
     }
 
-    #main > #endec-div {
+    #endec-div {
         width: 70%;
     }
 
-    #dec-btn {
-        width: 100%;
-    }
-
-    #enc-btn {
+    #enc-btn, #dec-btn {
         width: 100%;
     }
 
@@ -288,35 +198,37 @@ button img {
         width: 80%;
     }
 
-    #encryption textarea, #decryption textarea {
-        height: 50px;
+    textarea {
+        height: 70px;
     }
 
-    #encryption button, #decryption button {
+    button {
         font-size: 15px;
+        height: 50px;
     }
 }
 
 @media (max-width: 480px) {
     #main > h1 {
         font-size: 28px;
-        flex-direction: column;
     }
 
-    #main > #endec-div {
-        flex-direction: column;
+    #endec-div {
+        flex-direction: row;
+        width: 90%;
     }
 
     #encryption h5, #decryption h5 {
         font-size: 14px;
     }
 
-    #encryption textarea, #decryption textarea {
-        height: 40px;
+    textarea {
+        height: 70px;
     }
 
-    #encryption button, #decryption button {
+    button {
         font-size: 14px;
         padding: 8px;
+        height: 50px;
     }
 }
