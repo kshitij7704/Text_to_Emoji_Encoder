@@ -1,57 +1,54 @@
-# Text-Emoji Cipher
+# 🔐 Text-Emoji Cipher
 
-**Text-Emoji Cipher** is a React-based web application that allows users to securely encrypt and decrypt messages using AES encryption and an emoji-based representation. Share your secrets as fun emoji strings and have recipients decode them with the same secret key—no accounts, no storage.
-
----
-
-## Features
-
-- **AES Encryption:** Secure your message with industry-standard AES.
-- **Emoji Cipher:** Encrypted Base64 data is mapped to emojis, making it both fun and unreadable without the key.
-- **Stateless:** No server or database—encryption and decryption happen entirely in the browser.
-- **Copy & Share:** One-click copy of the emoji cipher for easy sharing.
-- **Responsive UI:** Modern, dark-themed interface that works on desktop and mobile.
-- **Clear Instructions:** Built-in “How to Use” guide for first-time users.
-- **Header & Footer:** Branded with your name and link to your personal website.
+**Text-Emoji Cipher** is a React-based web app that lets you securely encrypt and decrypt messages using AES encryption and have fun sharing them as emoji strings! No servers, no storage—just your browser, your secret key, and a smile 😊.
 
 ---
 
-## Live Demo
+## ✨ Features
 
-Check out the deployed app at:  
-https://<your-username>.github.io/<repo-name>
-
----
-
-## Screenshots
-
-![Encode Screen](./assets/encode-screenshot.png)  
-![Decode Screen](./assets/decode-screenshot.png)  
+- 🔒 **AES Encryption:** Industry-standard AES keeps your message safe.  
+- 🎉 **Emoji Cipher:** Convert encrypted Base64 into a string of emojis.  
+- 🌐 **Stateless & Client-Side:** Everything happens in your browser—no backend.  
+- 📋 **Copy & Share:** One-click copy of the emoji cipher for easy sharing.  
+- 📱 **Responsive UI:** Works beautifully on desktop and mobile.  
+- 📖 **Built-in Guide:** Step-by-step “How to Use” instructions.  
+- 🏷️ **Header & Footer:** Branded with your name & personal link.
 
 ---
 
-## Installation
+## 📸 Screenshots
 
-1. Clone the repository:
+<img src="./output/Encode.png" alt="Encode Screen"/>  
+<img src="./output/Decode.png" alt="Decode Screen"/>
+
+---
+
+## 🛠️ Installation
+
+1. **Clone** the repo:
    ```bash
-   git clone https://github.com/kshitij7704/Text_Emoji_Encoder.git
-   cd Text_Emoji_Encoder
+   git clone https://github.com/kshitij7704/Text_to_Emoji_Encoder.git
+   cd Text_to_Emoji_Encoder
    ```
-2. Install dependencies:
+2. **Install** dependencies:
    ```bash
    npm install
    ```
-3. Run locally:
+3. **Run** locally:
    ```bash
    npm start
+   ```
+4. **Build** for production:
+   ```bash
+   npm run build
    ```
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
-text-emoji-encoder/
+Text_to_Emoji_Encoder/
 ├── public/
 │   ├── index.html
 │   ├── lock.png
@@ -73,37 +70,41 @@ text-emoji-encoder/
 
 ---
 
-## Usage
+## 🔍 Usage
 
-1. **Encode:**
-   - Select the **Encode** tab.
-   - Enter your message and secret key.
-   - Click **Encode Message** to generate the emoji cipher.
-   - Click **Copy Emoji Cipher** and share it.
+### 🖋️ Encode
 
-2. **Decode:**
-   - Select the **Decode** tab.
-   - Paste the emoji cipher and enter the same secret key.
-   - Click **Decode Message** to reveal the original text.
+1. Select the **Encode** tab.  
+2. Enter your message and a secret key.  
+3. Click **Encode Message** 🔐 to generate your emoji cipher.  
+4. Click **Copy Emoji Cipher** 📋 and share it!
 
----
+### 🔓 Decode
 
-## Deployment
-Site deplpoyed on Netlify: URL
+1. Select the **Decode** tab.  
+2. Paste the emoji cipher and enter the same secret key.  
+3. Click **Decode Message** 🔓 to reveal the original text.
 
 ---
 
-## Technologies
+## 🚀 Deployment
 
-- React
-- Crypto-JS (AES)
-- JavaScript (ES6+)
-- HTML5 & CSS3
-- Poppins Font from Google Fonts
+Deploy on Netify, URL: https://text-emoji-cipher.netlify.app/
 
 ---
 
-## Author
+## 🧰 Technologies
+
+- **React**  
+- **Crypto-JS** (AES)  
+- **JavaScript (ES6+)**  
+- **HTML5 & CSS3**  
+- **Poppins Font** from Google Fonts
+
+---
+
+## 👨‍💻 Author
 
 **Kshitij Kashyap**  
-[https://your-personal-website.com](https://your-personal-website.com)
+🌐 [LinkedIn](https://www.linkedin.com/in/kshitij-kashyap-133205264/) <br>
+💻 [GitHub](https://github.com/kshitij7704)
