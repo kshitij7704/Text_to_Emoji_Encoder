@@ -1,39 +1,109 @@
-# Text to Emoji Encoder/Decryptor
-https://text-emoji-cipher.netlify.app/
-<br>This project allows users to encode their secret messages into emojis and later decode them using a specific password. The application provides a simple and secure way to share sensitive information using fun and visually appealing emoji characters.
+# Text-Emoji Cipher
+
+**Text-Emoji Cipher** is a React-based web application that allows users to securely encrypt and decrypt messages using AES encryption and an emoji-based representation. Share your secrets as fun emoji strings and have recipients decode them with the same secret key—no accounts, no storage.
+
+---
 
 ## Features
-1. <b>Encode Text</b>: Converts your text into a sequence of emojis.
-2. <b>Decode Text</b>: Converts the emoji sequence back to the original text using a password.
-3. <b>Password Protection</b>: Ensures that only users with the correct password can decode the message.
-4. <b>Copy to Clipboard</b>: Allows users to easily copy the encoded message.
-   
-## How to Use
-### 1. Encode Text
-1. <b>Type a Message</b>: Enter the text you want to encode in the provided textarea.
-2. <b>Set a Password</b>: Input a password to secure your encoded message.
-3. <b>Encode Text</b>: Click the "Encode Text" button. The encoded emojis will appear, and you can copy them to the clipboard.
-### 2. Decode Text
-1. <b>Paste Encoded Emojis</b>: Enter the emoji sequence you want to decode.
-2. <b>Type the Password</b>: Input the password that was used during the encoding process.
-3. <b>Decode Emojis</b>: Click the "Decode Text" button to reveal the original message. If the password is incorrect or the message is not found, an error will be displayed.
-## File Structure
-1. <b>index.html</b>: The main HTML file containing the structure of the application.
-2. <b>style.css</b>: The CSS file for styling the application.
-3. <b>script.js</b>: The JavaScript file containing the logic for encoding, decoding, and copying the message.
 
-## Setup Instructions
-To run the Text to Emoji Encoder/Decryptor locally, follow these steps:
+- **AES Encryption:** Secure your message with industry-standard AES.
+- **Emoji Cipher:** Encrypted Base64 data is mapped to emojis, making it both fun and unreadable without the key.
+- **Stateless:** No server or database—encryption and decryption happen entirely in the browser.
+- **Copy & Share:** One-click copy of the emoji cipher for easy sharing.
+- **Responsive UI:** Modern, dark-themed interface that works on desktop and mobile.
+- **Clear Instructions:** Built-in “How to Use” guide for first-time users.
+- **Header & Footer:** Branded with your name and link to your personal website.
+
+---
+
+## Live Demo
+
+Check out the deployed app at:  
+https://<your-username>.github.io/<repo-name>
+
+---
+
+## Screenshots
+
+![Encode Screen](./assets/encode-screenshot.png)  
+![Decode Screen](./assets/decode-screenshot.png)  
+
+---
+
+## Installation
+
 1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/Text_to_Emoji_Encoder.git
+   ```bash
+   git clone https://github.com/kshitij7704/Text_Emoji_Encoder.git
+   cd Text_Emoji_Encoder
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run locally:
+   ```bash
+   npm start
+   ```
+
+---
+
+## Project Structure
+
 ```
-2. Navigate to the project directory:
-```bash
-cd Text_to_Emoji_Encoder
+text-emoji-encoder/
+├── public/
+│   ├── index.html
+│   ├── lock.png
+│   ├── unlock.png
+│   └── arrow.png
+├── src/
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Steps.jsx
+│   │   ├── Encoder.jsx
+│   │   └── Decoder.jsx
+│   ├── App.jsx
+│   ├── index.js
+│   └── style.css
+├── package.json
+└── README.md
 ```
-3. Open the index.html file in your preferred web browser:
-```bash
-open index.html
-```
-Alternatively, you can use a live server extension in your code editor for a better development experience.
+
+---
+
+## Usage
+
+1. **Encode:**
+   - Select the **Encode** tab.
+   - Enter your message and secret key.
+   - Click **Encode Message** to generate the emoji cipher.
+   - Click **Copy Emoji Cipher** and share it.
+
+2. **Decode:**
+   - Select the **Decode** tab.
+   - Paste the emoji cipher and enter the same secret key.
+   - Click **Decode Message** to reveal the original text.
+
+---
+
+## Deployment
+Site deplpoyed on Netlify: URL
+
+---
+
+## Technologies
+
+- React
+- Crypto-JS (AES)
+- JavaScript (ES6+)
+- HTML5 & CSS3
+- Poppins Font from Google Fonts
+
+---
+
+## Author
+
+**Kshitij Kashyap**  
+[https://your-personal-website.com](https://your-personal-website.com)
