@@ -1,5 +1,6 @@
 # Text to Emoji Encoder/Decryptor
-This project allows users to encode their secret messages into emojis and later decode them using a specific password. The application provides a simple and secure way to share sensitive information using fun and visually appealing emoji characters.
+https://text-emoji-cipher.netlify.app/
+<br>This project allows users to encode their secret messages into emojis and later decode them using a specific password. The application provides a simple and secure way to share sensitive information using fun and visually appealing emoji characters.
 
 ## Features
 1. <b>Encode Text</b>: Converts your text into a sequence of emojis.
