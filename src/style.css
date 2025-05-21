@@ -1,0 +1,244 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+/*-----------------------------------
+  Variables & Reset
+-----------------------------------*/
+:root {
+  --bg: #0d111f;
+  --panel: #161b2e;
+  --accent: #ff6b6b;
+  --primary: #5a76f9;
+  --text: #cfd8f1;
+  --muted: #7e8aa2;
+  --radius: 12px;
+  --gap: 20px;
+  --transition: 0.3s ease;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/*-----------------------------------
+  Header & Footer Wrappers
+-----------------------------------*/
+#site-header,
+#site-footer {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto var(--gap);
+  text-align: center;
+}
+
+#site-header {
+    margin-top: 1.25rem;
+}
+
+/*-----------------------------------
+  Header
+-----------------------------------*/
+#site-header h1 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+#site-header p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/*-----------------------------------
+  Content Layout
+-----------------------------------*/
+#content-wrapper {
+  flex: 1;
+  display: flex;
+  gap: var(--gap);
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto var(--gap);
+}
+
+/* Left column: steps */
+#side-left {
+  flex: 1;
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: var(--gap);
+  color: var(--text);
+  line-height: 1.5;
+  padding-top: 4.5rem;
+}
+#side-left h3 {
+  color: var(--primary);
+  margin-bottom: var(--gap / 2);
+}
+#steps ol {
+  padding-left: 1.2em;
+}
+#steps li {
+  margin-bottom: 0.75em;
+}
+
+/* Right column: tool */
+#side-right {
+  flex: 2;
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: var(--gap);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding-top: 4.5rem;
+}
+
+/* Tab controls */
+#tab-controls {
+  display: flex;
+  background: var(--bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+#tab-controls h3 {
+  flex: 1;
+  text-align: center;
+  padding: 12px 0;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--muted);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: background var(--transition), color var(--transition);
+}
+#tab-controls h3.active,
+#tab-controls h3:hover {
+  background: var(--accent);
+  color: #fff;
+}
+#tab-controls img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Sections */
+#encryption,
+#decryption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+/* Labels */
+h5 {
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* Inputs */
+textarea,
+input[type="password"] {
+  width: 100%;
+  padding: var(--gap);
+  border-radius: var(--radius);
+  border: none;
+  background: #0f1224;
+  color: var(--text);
+  font-size: 1rem;
+  resize: none;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.6);
+  transition: background var(--transition);
+}
+textarea::placeholder,
+input::placeholder {
+  color: var(--muted);
+}
+textarea:focus,
+input:focus {
+  background: #1f263b;
+  outline: none;
+}
+
+/* Buttons */
+button {
+  padding: var(--gap);
+  border: none;
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+button:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Results */
+#result,
+#wrongResult {
+  padding: var(--gap);
+  border-radius: var(--radius);
+  word-break: break-word;
+}
+#result {
+  background: #0f1224;
+  color: var(--text);
+  white-space: pre-wrap;
+  font-size: 1.2rem;
+}
+#wrongResult {
+  background: var(--bg);
+  color: var(--accent);
+}
+
+/*-----------------------------------
+  Footer
+-----------------------------------*/
+#site-footer {
+  margin-top: auto;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+#site-footer a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+#site-footer a:hover {
+  color: var(--primary);
+}
+
+/*-----------------------------------
+  Responsive
+-----------------------------------*/
+@media (max-width: 768px) {
+  #content-wrapper {
+    flex-direction: column;
+  }
+}
