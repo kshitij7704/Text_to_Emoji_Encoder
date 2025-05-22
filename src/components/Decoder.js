@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import AES from 'crypto-js/aes';
 import Utf8 from 'crypto-js/enc-utf8';
+import {
+  BASE64_CHARS,
+  PAD_CHAR,
+  EMOJI_ALPHABET,
+  PAD_EMOJI
+} from './Common';
 
 export default function Decoder() {
   const [emojiInput, setEmojiInput] = useState('');
@@ -9,23 +15,23 @@ export default function Decoder() {
   const [error, setError] = useState('');
 
   const handleDecrypt = () => {
-    // Split the emoji string into an array of codepoints
-    const arr = Array.from(emojiInput);
-    if (!arr.length) {
+    if (!emojiInput) {
       setError('Paste some emoji cipher first.');
       setPlaintext('');
       return;
     }
 
-    // Reverse mapping: emoji → Base64 char by subtracting U+1F600 offset
-    let base64 = '';
-    for (let e of arr) {
-      const code = e.codePointAt(0) - 0x1f600;
-      base64 += String.fromCharCode(code);
-    }
+    // 1) fixed-emoji → Base64
+    const base64 = Array.from(emojiInput)
+      .map(e =>
+        e === PAD_EMOJI
+          ? PAD_CHAR
+          : BASE64_CHARS[EMOJI_ALPHABET.indexOf(e)]
+      )
+      .join('');
 
+    // 2) AES-decrypt
     try {
-      // AES-decrypt
       const bytes = AES.decrypt(base64, passphrase);
       const pt = bytes.toString(Utf8);
       if (!pt) throw new Error();
@@ -39,11 +45,11 @@ export default function Decoder() {
 
   return (
     <div id="decryption">
-      <h5>1. Paste your encoded (emoji) text</h5>
+      <h5>1. Paste your emoji cipher</h5>
       <textarea
         value={emojiInput}
         onChange={e => setEmojiInput(e.target.value)}
-        placeholder="Paste emoji cipher here"
+        placeholder="Paste emojis here to decode"
         rows={4}
       />
 
@@ -55,46 +61,18 @@ export default function Decoder() {
         placeholder="Secret key"
       />
 
-      <button id="decrypt-btn" onClick={handleDecrypt}>
-        <span>
-          <img src="/unlock.png" alt="Unlock" />
-        </span>
+      <button onClick={handleDecrypt}>
+        <span><img src="/unlock.png" alt="Unlock" /></span>
         Decode Message
       </button>
 
       {plaintext && (
         <>
           <h5>Decoded Message:</h5>
-          <textarea
-            readOnly
-            value={plaintext}
-            rows={4}
-            id="result"
-            style={{
-              backgroundColor: '#16213e',
-              color: '#eee',
-              padding: '15px',
-              borderRadius: '10px',
-              marginTop: '10px'
-            }}
-          />
+          <textarea readOnly value={plaintext} rows={4} id="result" />
         </>
       )}
-
-      {error && (
-        <div
-          id="wrongResult"
-          style={{
-            color: '#e94560',
-            backgroundColor: '#16213e',
-            padding: '15px',
-            borderRadius: '10px',
-            marginTop: '10px'
-          }}
-        >
-          {error}
-        </div>
-      )}
+      {error && <div id="wrongResult">{error}</div>}
     </div>
   );
 }
